@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginProcess.BusinessLayer.Test;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace Web.AppLoginProcess.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Test test = new Test();
+            test.List();
             return View();
         }
     }

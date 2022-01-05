@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LoginProcess.DataAccessLayer\LoginProcess.DataAccessLayer.csproj">
