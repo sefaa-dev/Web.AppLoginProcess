@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace LoginProcess.DataAccessLayer.Repository
 {
-    public class Repository<T> where T : class
+    public class Repository<T> : RepositoryBase where T : class
     {
-        private LoginProcessDBEntities db = new LoginProcessDBEntities();
+        
         private DbSet<T> dbset;
         public Repository()
         {

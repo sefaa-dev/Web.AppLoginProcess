@@ -211,6 +211,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialTag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,6 +227,10 @@
     <ProjectReference Include="..\LoginProcess.BusinessLayer\LoginProcess.BusinessLayer.csproj">
       <Project>{31139d92-c27d-4f01-946b-10516d4d7e64}</Project>
       <Name>LoginProcess.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoginProcess.Entities\LoginProcess.Entities.csproj">
+      <Project>{266EA711-0187-4D47-B9DE-9F308B1ABA65}</Project>
+      <Name>LoginProcess.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
