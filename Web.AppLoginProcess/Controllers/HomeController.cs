@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Web.AppLoginProcess.ViewModel;
 
 namespace Web.AppLoginProcess.Controllers
 {
@@ -41,6 +42,22 @@ namespace Web.AppLoginProcess.Controllers
 
         }
         public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            return View();
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
         {
             return View();
         }
