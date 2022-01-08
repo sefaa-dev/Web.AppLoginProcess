@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LoginProcess.DataAccessLayer.Repository
 {
-    public class Repository<T> : RepositoryBase where T : class
+    public class Repository<T> : RepositoryBase, IRepository<T> where T : class
     {
         
         private DbSet<T> dbset;
@@ -49,6 +49,11 @@ namespace LoginProcess.DataAccessLayer.Repository
         public T Find(Expression<Func<T, bool>> where)
         {
             return dbset.FirstOrDefault(where);
+        }
+
+        public IQueryable ListQueryable()
+        {
+            return dbset.AsQueryable<T>();
         }
     }
 }

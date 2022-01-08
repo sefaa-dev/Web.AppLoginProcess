@@ -12,11 +12,12 @@ namespace Web.AppLoginProcess.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+          PostManager post = new PostManager();
+   
         public ActionResult Index()
         {
-            PostManager post = new PostManager();
-            ViewBag.GetPost = post.GetPosts();
+         
+            ViewBag.GetPost = post.GetPosts().OrderByDescending(x => x.ModifyTime).ToList();
             return View(ViewBag.GetPost);
         }
         public ActionResult GetTag(int? id)
@@ -31,7 +32,17 @@ namespace Web.AppLoginProcess.Controllers
             {
                 return HttpNotFound();
             }
-            return View("Index", tgm.Posts);
+            return View("Index", tgm.Posts.OrderByDescending(x => x.ModifyTime).ToList());
+        }
+        public ActionResult MostLike()
+        {
+            ViewBag.GetPost = post.GetPosts().OrderByDescending(x => x.LikeCount).ToList();
+            return View("Index", ViewBag.GetPost);
+
+        }
+        public ActionResult Login()
+        {
+            return View();
         }
     }
 }
